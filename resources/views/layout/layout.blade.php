@@ -22,6 +22,6 @@
         </ul>
       </div>
     </nav>
-    @yield('content');
+    @yield('content')
   </body>
 </html>

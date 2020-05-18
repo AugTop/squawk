@@ -24,8 +24,8 @@ class WhazzupController extends Controller
 			if($pilot[3] == "PILOT"){
 				if(strlen($pilot[22])<=3){
 					$pilot[22] = str_pad($pilot[22], 4, "0", STR_PAD_LEFT);
-				}
-				$entry = new Whazzup();
+				};
+				$entry = new whazzup();
 				$entry->create([
 					'vid' => $pilot[1],
 					'callsign' => $pilot[0],

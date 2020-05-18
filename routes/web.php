@@ -24,5 +24,5 @@ Route::get('/airports','AirportsController@index');
 Route::view('/airports/add','airports.add');
 Route::post('airports/add','AirportsController@add');
 Route::get('airports/{id}/edit','AirportsController@edit');
-Route::patch('airports/{airport}','AirportsController@update');
+Route::patch('airports/{airport}/update','AirportsController@update');
 Route::get('airports/{airport}/delete','AirportsController@destroy');
