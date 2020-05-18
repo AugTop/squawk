@@ -18,11 +18,14 @@ Route::get('/', function () {
 });
 Route::get('/refresh','WhazzupController@refresh');
 
+//SQUAWK
+Route::post('/squawk/find','SquawkController@find');
+
 
 //AIRPORTS
 Route::get('/airports','AirportsController@index');
 Route::view('/airports/add','airports.add');
-Route::post('airports/add','AirportsController@add');
-Route::get('airports/{id}/edit','AirportsController@edit');
-Route::patch('airports/{airport}/update','AirportsController@update');
-Route::get('airports/{airport}/delete','AirportsController@destroy');
+Route::post('/airports/add','AirportsController@add');
+Route::get('/airports/{id}/edit','AirportsController@edit');
+Route::patch('/airports/{airport}/update','AirportsController@update');
+Route::get('/airports/{airport}/delete','AirportsController@destroy');

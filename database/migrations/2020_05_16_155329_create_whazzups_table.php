@@ -19,12 +19,15 @@ class CreateWhazzupsTable extends Migration
             $table->string('callsign')->nullable();
             $table->text('aircraft')->nullable();
             $table->string('departure_time')->nullable();
+            $table->string('departure')->nullable();
+            $table->string('destination_time')->nullable();
+            $table->string('destination')->nullable();
+            $table->string('alternate')->nullable();
+            $table->string('rule')->nullable();
             $table->text('route')->nullable();
             $table->text('rmk')->nullable();
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
-            $table->string('departure')->nullable();
-            $table->string('destination')->nullable();
             $table->timestamps();
         });
     }

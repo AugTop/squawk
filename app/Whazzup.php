@@ -10,12 +10,15 @@ class Whazzup extends Model
         'vid',
 		'callsign',
 		'aircraft',
+		'rule',
 		'departure_time',
+		'destination_time',
 		'route',
 		'rmk',
 		'lat',
 		'lng',
 		'departure',
-		'destination'
+		'destination',
+		'alternate'
         ];
     }

@@ -5,10 +5,6 @@ namespace App\Http\Controllers;
 use App\Airport;
 use App\Code;
 
-use App\Rules\range;
-
-use Validator;
-
 use Illuminate\Http\Request;
 
 class AirportsController extends Controller
@@ -23,9 +19,9 @@ class AirportsController extends Controller
 			'name' => 'required',
 			'oaci' => 'required|unique:airports|max:4',
 			'min' => 'required|array',
-			'min.*' => ['max:9999','integer',new Range],
+			'min.*' => ['max:9999','integer','gt:0010'],
 			'max' => 'required|array',
-			'max.*' => ['max:9999','integer','gte:min.*',new Range],
+			'max.*' => ['max:9999','integer','gte:min.*','lt:7777'],
 		]);
 		$codes = array_combine(request('min'), request('max'));
 		$airport = new Airport();
@@ -45,7 +41,7 @@ class AirportsController extends Controller
 	}
 
 	public function edit($id){
-		$airport = Airport::find($id);
+		$airport = Airport::where('id',$id)->firstOrFail() ;
 		return view('airports.edit', ['airport' => $airport]);
 	}
 
@@ -55,9 +51,9 @@ class AirportsController extends Controller
 			'name' => 'required',
 			'oaci' => 'required|max:4',
 			'min' => 'required|array',
-			'min.*' => ['max:9999','integer',new Range],
+			'min.*' => ['max:9999','integer','gt:0010'],
 			'max' => 'required|array',
-			'max.*' => ['max:9999','integer','gte:min.*',new Range],
+			'max.*' => ['max:9999','integer','gte:min.*','lt:7777'],
 		]);
 		
 		$airport->update($data);

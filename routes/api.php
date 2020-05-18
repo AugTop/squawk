@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('squawk', 'ApiController@index');
+Route::get('squawk/{callsign}', 'ApiController@show');
+Route::get('airport/{oaci}', 'ApiController@oaci');
+Route::put('articles/{id}', 'ArticleController@update');
+Route::delete('articles/{id}', 'ArticleController@delete');
