@@ -13,6 +13,8 @@ class AirportsController extends Controller
 		$airports = Airport::all();
 		return view('airports.index', ['airports' => $airports]);	
 	}
+
+
 	public function add(Request $request){
 
 		$data = request()->validate([
@@ -23,12 +25,13 @@ class AirportsController extends Controller
 			'max' => 'required|array',
 			'max.*' => ['max:9999','integer','gte:min.*','lt:7777'],
 		]);
+		// Combine min_value and max_value in 1 array
 		$codes = array_combine(request('min'), request('max'));
 		$airport = new Airport();
 		$airport->name = request('name');
 		$airport->oaci = request('oaci');
 		$airport->save();
-		var_dump($data);
+		// Save codes with airport_id
 		foreach ($codes as $min => $max) {
 			$code = new Code();
 			$code->min_value = $min;
@@ -59,10 +62,10 @@ class AirportsController extends Controller
 		$airport->update($data);
 		$codes = array_combine(request('min'), request('max'));
 		$code = new Code();
+		// Deletion of existing data to avoid duplication
 		$code->where('airport_id', $airport->id)->delete();
 		foreach($codes as $min => $max) {
 			$code = new Code();
-			var_dump('ceci est une boucle');
 			$code->min_value = $min;
 			$code->max_value = $max;
 			$code->airport_id = $airport->id;
@@ -70,7 +73,7 @@ class AirportsController extends Controller
 		}
 		return redirect()->action('AirportsController@index')->with('status', 'The airport has indeed been modified !');
 	}
-
+	
 	public function destroy(Airport $airport){
 		$airport->delete();
 		return redirect()->action('AirportsController@index')->with('status', 'The airport has indeed been deleted !');

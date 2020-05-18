@@ -21,7 +21,6 @@ Route::get('/refresh','WhazzupController@refresh');
 //SQUAWK
 Route::post('/squawk/find','SquawkController@find');
 
-
 //AIRPORTS
 Route::get('/airports','AirportsController@index');
 Route::view('/airports/add','airports.add');

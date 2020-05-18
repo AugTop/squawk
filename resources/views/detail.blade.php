@@ -15,17 +15,19 @@
       -{{ $flight->destination }}{{ $flight->destination_time }} {{ $flight->alternate }} <br />
       -{{ $flight->rmk }})</p>
 
-      <h1>Generated code :<h1>
-        <h2>{{ $code }}</h2>
-      </div>
-      <div id='map' class="container" style='width: 800px; height: 400px;'></div>
+      <h2>Code generated :<h2>
+        <h3>{{ $code }}</h3>
+        <br/>
+      <h2>Last Position :<h2>
+      
+      <div id='map' class="justify-content-md-center" style='width: 1050px; height: 400px;'></div>
       <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiYXVndG9wIiwiYSI6ImNqczBpYTVlajFleHg0NGx4eGZ6bnFibHoifQ.VNbNg3PwIVzwKG9X1K8Z3Q';
         var map = new mapboxgl.Map({
           container: 'map',
           style: 'mapbox://styles/mapbox/streets-v11',
           center: [{{ $flight->lng }}, {{ $flight->lat }} ],
-          zoom: 5,
+          zoom: 6,
         });
 
         map.on('load', function() {

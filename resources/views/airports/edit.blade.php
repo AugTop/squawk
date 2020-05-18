@@ -31,14 +31,14 @@
       @foreach($airport->code as $key => $code)
       @if ($key < 1)
       <tr>
-        <td><input type="number" name="min[]" placeholder="Min sqwak mode" class="form-control name_list" value="{{ $code->min_value }}" max="9999" /></td>
-        <td><input type="number" name="max[]" placeholder="Max sqwak code" class="form-control name_list" value="{{ $code->max_value }}" max="9999" /></td>
+        <td><input type="number" name="min[]" placeholder="Min squawk mode" class="form-control name_list" value="{{ $code->min_value }}" max="7777" /></td>
+        <td><input type="number" name="max[]" placeholder="Max squawk code" class="form-control name_list" value="{{ $code->max_value }}" max="7777" /></td>
         <td><button type="button" name="add" id="add" class="btn btn-success">Add Range</button></td>
       </tr>
       @else
       <tr>
-        <td><input type="number" name="min[]" placeholder="Min sqwak mode" class="form-control name_list" value="{{ $code->min_value }}" max="9999"/></td>
-        <td><input type="number" name="max[]" placeholder="Max sqwak code" class="form-control name_list" value="{{ $code->max_value }}" max="9999"/></td>
+        <td><input type="number" name="min[]" placeholder="Min squawk mode" class="form-control name_list" value="{{ $code->min_value }}" max="7777"/></td>
+        <td><input type="number" name="max[]" placeholder="Max squawk code" class="form-control name_list" value="{{ $code->max_value }}" max="7777"/></td>
         <td><button type="button" name="remove" class="btn btn-danger btn_remove">Remove</button></td>
       </tr>
       @endif
@@ -61,7 +61,7 @@ $(add_button).click(function(e){
   e.preventDefault();
 if(x < max_fields){ //max input box allowed
 x++; //text box increment
-$(wrapper).append('<tr><td><input type="number" name="min[]" placeholder="Min sqwak mode" class="form-control name_list" max="9999"/></td><td><input type="number" name="max[]" placeholder="Max sqwak code" class="form-control name_list" max="9999"/></td><td><button type="button" name="remove" class="btn btn-danger btn_remove">Remove</button></td></tr>'); //add input box
+$(wrapper).append('<tr><td><input type="number" name="min[]" placeholder="Min squawk mode" class="form-control name_list" max="7777"/></td><td><input type="number" name="max[]" placeholder="Max squawk code" class="form-control name_list" max="7777"/></td><td><button type="button" name="remove" class="btn btn-danger btn_remove">Remove</button></td></tr>'); //add input box
 }
 });
 

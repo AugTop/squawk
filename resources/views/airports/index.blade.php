@@ -5,8 +5,8 @@
 <main role="main" class="container">
   <div class="jumbotron">
     <h1>My airports</h1>
-    <p class="lead">Here you can edit and manage our airport</p>
-    <a class="btn btn-lg btn-primary" href="/airports/add" role="button">Ajouter aéroport</a> 
+    <p class="lead">Here you can manage your airports</p>
+    <a class="btn btn-lg btn-primary" href="/airports/add" role="button">Add an airport</a> 
 </div>
 @if (session('status'))
     <div class="alert alert-success">

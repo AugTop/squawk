@@ -9,14 +9,14 @@
     </div>
     @endif
     <h1>Welcome !</h1>
-    <p class="lead">You can click here for fecth all the traffic online on ivao ...</p>
+    <p class="lead">Click here to download the latest data.</p>
     <a class="btn btn-lg btn-primary" href="refresh" role="button">Refresh</a>
     <hr />
-    <h1>Find your sqwak !</h1>
-    <p class="lead">You can find the sqwuak for your departure here : </p>
+    <h1>Your own data !</h1>
+    <p class="lead">Fill in your squawk codes according to your favourite airports !</p>
     <a class="btn btn-lg btn-primary" href="/airports" role="button">Manage my airports</a>
     <hr>
-    <h1>Find your sqwak !</h1>
+    <h1>Finding the best squawk !</h1>
     <p class="lead">Entry your callsign here : </p>
     @if ($errors->any())
     <div class="alert alert-danger">
